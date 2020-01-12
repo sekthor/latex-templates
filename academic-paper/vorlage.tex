@@ -1,0 +1,29 @@
+\documentclass[a4paper]{article}
+
+% natbib um im apa style zitieren zu können
+\usepackage{natbib}
+
+% Titel Informationen
+\title{Titel des Dokuments}
+\author{Author}
+%\date{Datum} % Auskommentiert um aktuelles Datum zu erhalten
+
+% Das Dokument beginnt hier
+\begin{document}
+
+% Titel und Inhaltsverzeichnis auf eigener Seite
+\maketitle
+\pagebreak
+\tableofcontents
+\pagebreak
+
+% Ab hier soll der Inhalt des Dokumentes sein
+\section{Abstract}
+Hier ist das Abstract mit einem Zitat\cite[p.~150]{quellenName}.
+
+% Quellenangabe auf eigener Seite
+\pagebreak
+\bibliographystyle{apa}
+\bibliography{quellen}
+    
+\end{document}
