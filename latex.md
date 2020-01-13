@@ -5,6 +5,23 @@
 Every document starts with a ```\documentclass{}```, that tells the compiler what
 kind of document, we want to create. The type goes into the curly braces.
 
+```latex
+% fist line of the document, regular font size is 12pt on a a4paper
+% we are writing an article
+\documentclass[12pt,a4paper]{article}
+```
+
+This is a very typical header. Notice that lines that start with ```%``` are comments
+and will be ignored by the compiler. This is a way for you to add commentary to
+your code, comment out lines with errors and for me to explain things in the examples.
+
+Also note that these options in the quare brackets are no necessity. So I will not
+use them for now.
+
+Before the curly braces you can set options that apply to your document. The font
+size for example. I usually put the ```a4paper``` option, as that is what my printer
+uses.
+
 Common document types are:
 
 | Type     | Description |
@@ -19,9 +36,7 @@ Common document types are:
 | letter   | For writing letters.|
 | beamer   | For writing presentations (see LaTeX/Presentations).|
 
-Before the curly braces you can set options that apply to your document. The font
-size for example. I usually put the ```a4paper``` option, as that is what my printer
-uses.
+common options are:
 
 | option | Description |
 |:-------|:------------|
@@ -35,19 +50,6 @@ uses.
 | landscape | Changes the layout of the document to print in landscape mode.|
 | openright, openany | Makes chapters begin either only on right hand pages or on the next page available. This does not work with the article class, as it does not know about chapters. The report class by default starts chapters on the next page available and the book class starts them on right hand pages. |
 | draft | makes LaTeX indicate hyphenation and justification problems with a small square in the right-hand margin of the problem line so they can be located quickly by a human. It also suppresses the inclusion of images and shows only a frame where they would normally occur. |
-
-```latex
-% fist line of the document, regular font size is 12pt on a a4paper
-% we are writing an article
-\documentclass[12pt,a4paper]{article}
-```
-
-This is a very typical header. Notice that lines that start with ```%``` are comments
-and will be ignored by the compiler. This is a way for you to add commentary to
-your code, comment out lines with errors and for me to explain things in the examples.
-
-Also note that these options in the quare brackets are no necessity. So I will not
-use them for now.
 
 The next necessary step ist to tell LaTeX where our document starts and where it
 ends. We do that by using the ```\begin{}``` macro and put ```document``` in the
