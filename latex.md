@@ -5,6 +5,10 @@
 Every document starts with a ```\documentclass{}```, that tells the compiler what
 kind of document, we want to create. The type goes into the curly braces.
 
+Before the curly braces you can set options that apply to your document. The font
+size for example. I usually put the ```a4paper``` option, as that is what my printer
+uses.
+
 ```latex
 % fist line of the document, regular font size is 12pt on a a4paper
 % we are writing an article
@@ -17,10 +21,6 @@ your code, comment out lines with errors and for me to explain things in the exa
 
 Also note that these options in the quare brackets are no necessity. So I will not
 use them for now.
-
-Before the curly braces you can set options that apply to your document. The font
-size for example. I usually put the ```a4paper``` option, as that is what my printer
-uses.
 
 Common document types are:
 
@@ -36,7 +36,7 @@ Common document types are:
 | letter   | For writing letters.|
 | beamer   | For writing presentations (see LaTeX/Presentations).|
 
-common options are:
+Common options are:
 
 | option | Description |
 |:-------|:------------|
@@ -90,6 +90,68 @@ The programm will have compiled your document to a pdf file with the same name.
 Not that there are a bunch of more files with different extensions in the directory.
 Those are files the compiler needs when compiling. There no longer needed after it's
 finnished. It is save to delete them.
+
+## Title
+
+On of the first things you usually want to do in a document is to give it a title.
+The ```\maktitle``` macro will display the title, author name and date.
+
+In order for this to work, you need to set ```\title{}``` and ```\author{}```.
+The date will be automatically set to todays date. You can change it by adding
+the desired date into ```\date{}```. If don't want one of the three values in
+your title, you can leave the curly braces blank.
+
+So with the title our document now looks like this:
+
+```latex
+\documentclass{article}
+
+\title{Title of Document}
+\author{Your Name}
+
+\begin{document}
+
+\maketitle
+
+Here is some example text.
+\end{document}
+```
+
+## Headings
+
+To structure your contnent with headings and subheadings, you can call ```\section{}```.
+The Title of your section (heading) goes in the curly braces. If you want to subdivide
+your sections you can call ```\subsection{}```. The sections and subsections, are
+numbered automatically by LaTeX.
+
+```latex
+\documentclass{article}
+
+\title{Title of Document}
+\author{Your Name}
+
+\begin{document}
+
+\maketitle
+
+\section{Title}
+Here is some example text. Random words just to to fill a paragraph are added.
+
+\subsection{Subtitle}
+Here is some text in a subsection.
+\end{document}
+```
+
+The output looks like this:
+
+![image](img/section.png)
+
+## Index
+
+If you want to have an index of all your sections you can use the ```\tableofcontents```
+macro. This is going to look like this:
+
+![image](img/tableofcontents.png)
 
 ## Lists
 
