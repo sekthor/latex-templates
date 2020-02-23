@@ -139,6 +139,9 @@ Here is some example text. Random words just to to fill a paragraph are added.
 
 \subsection{Subtitle}
 Here is some text in a subsection.
+
+\subsubsection{Subsubtitle}
+Here is some text in a subsubsection.
 \end{document}
 ```
 
@@ -146,12 +149,41 @@ The output looks like this:
 
 ![image](img/section.png)
 
-## Index
+## Table of Contents
 
-If you want to have an index of all your sections you can use the ```\tableofcontents```
+If you want to have an index of all your sections and subsections you can use the ```\tableofcontents```
 macro. This is going to look like this:
 
 ![image](img/tableofcontents.png)
+
+## Index
+
+To create an Index of keywords, and what page to find them on, you can use the ```makeidx```-package. You will have to include the ```\makeindex``` macro in the preamble. Each mention of the Keyword you would like to index, you can annotate using the ```\indedx{keyword}``` macro.
+
+To actually show the index, use ```\printindex```.
+
+```latex
+\documentclass{article}
+\usepackage{makeidx}
+
+\makeindex
+
+\title{Title of Document}
+\author{Your Name}
+
+\begin{document}
+
+\maketitle
+
+Here is some text metioning the keyword.\index{keyword}
+
+\printindex
+
+\end{document}
+```
+
+![image](img/index1.png)
+![image](img/index2.png)
 
 ## Lists
 
