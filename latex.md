@@ -3,8 +3,8 @@
 This is my guide on how to use LaTeX. It mostly consits of my own notes I took when
 first getting into LaTeX. Topics covereed are:
 
-- [basic structure](#Basic%structure)
-- [tables](#Tables%and%Figures)
+- [basic structure](#Basic-structure)
+- [tables](#Tables-and-Figures)
 
 ## Basic structure
 
