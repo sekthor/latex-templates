@@ -3,7 +3,7 @@
 This is my guide on how to use LaTeX. It mostly consits of my own notes I took when
 first getting into LaTeX. Topics covereed are:
 
-- [Basic structure](#Basic Structure)
+- [Basic structure](#Basic structure)
 
 ## Basic structure
 
