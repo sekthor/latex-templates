@@ -1,5 +1,10 @@
 # LaTeX - How to
 
+This is my guide on how to use LaTeX. It mostly consits of my own notes I took when
+first getting into LaTeX. Topics covereed are:
+
+- [Basic structure](#Basic Structure)
+
 ## Basic structure
 
 Every document starts with a ```\documentclass{}```, that tells the compiler what
