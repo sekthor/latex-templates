@@ -187,6 +187,19 @@ Here is some text metioning the keyword.\index{keyword}
 
 ## Lists
 
-## Tables
+## Tables and Figures
+
+```latex
+\begin{table}            % will create the float environment
+\centering               % centers table
+\begin{tabular}{|l|c|r|} % tell LaTeX number of columns and their alignment
+\hline                   % horizontal line
+Heading 1 & Heading & Heading 3 \\ % columns separated by &, end of row with \\
+\hline
+1 & 2 & 3 \\
+\hline
+\end{tabular}
+\end{table}
+```
 
 ## References
