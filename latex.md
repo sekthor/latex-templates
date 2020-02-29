@@ -3,11 +3,19 @@
 This is my guide on how to use LaTeX. It mostly consits of my own notes I took when
 first getting into LaTeX. Topics covereed are:
 
-- [basic structure](#Basic-structure)
-- [copiling](#compiling)
-- [title](#title)
-- [headings](#headings)
-- [tables](#Tables-and-Figures)
+- [Basic structure](#Basic-structure)
+- [Copiling](#compiling)
+- [Title](#title)
+- [Headings](#headings)
+- [Lists](#lists)
+- [Tables and figures](#Tables-and-Figures)
+- [Table of contents](#table-of-contents)
+- [Index](#index)
+- [References](#References)
+  - [Citations](#Citations)
+  - [Bibliography](#Biliography)
+  - [APA-citations](#APA-citations)
+- [Links (Hyperref)](#links-(hyperref))
 
 ## Basic structure
 
@@ -229,3 +237,115 @@ Here is some text metioning the keyword.\index{keyword}
 ![image](img/index2.png)
 
 ## References
+
+You can use BibTeX with LaTeX to manage all the references in your paper.
+To do so you need a separate biblioraphy file with the ```.bib``` file
+extension.
+
+In this file you save all the sources you want to reference. The BibTeX
+format looks like this:
+
+```bibtex
+@book{nameOfTheSource,
+  title={Title of the source},
+  author={Name of Author1, Name of Author2},
+  booktitle={Title of the Book},
+  pages={100},
+  year={2020},
+  publisher={Verlag},
+  address={Verlagsaddresse}
+}
+```
+
+At first you specify the type of the source you are refencing (```@book```,
+```@article```, ```@journal```, ...). Note that not all types are supported
+by all documentclasses. See [here](https://en.wikibooks.org/wiki/LaTeX/Bibliography_Management#BibTeX)
+for details.
+
+Then you give the source a name. You will use this name every time you
+reference the source. A good idea is to use the format of author name plus
+year.
+
+### Citations
+
+To actually cite a reference, we use the ```\cite``` macro. The options allow
+for you to specify a page number.
+
+```latex
+This is some text, taken from a different source. \cite{nameOfTheSource}
+
+In this sentence I'm including the pagenumber. \cite[p.~150]{nameOfTheSource}
+```
+
+### Bibliography
+
+To include all the references in your document, you need to use
+```\bibliography{}``` with the name of your bibliography file. You don't need to
+write the ```.bib``` file extension. You do however need to specify a
+```\bibliographystyle{}```. For starters, you can just use the regular ```plain```
+style.
+
+```latex
+\bibliographystyle{plain}
+\bibliography{filename}
+```
+
+### APA-Citations
+
+There is a standard ```apalike```-style included. However, it does not comply
+copletely with the way APA dictated how to cite references. To fix this, you need
+to install the ```apacite``` package ([apacite](https://ctan.org/pkg/apacite)).
+
+```latex
+\usepackage{apacite}
+[...]
+\bibliographystyle{apacite}
+\bibliography{filename}
+```
+
+## Links (Hyperref)
+
+One of the cool features of LaTeX is the ability to link to places within or
+outside your document. This is pretty neat, as you can klick on a section in your
+table of contents for example and be brought right to that section.
+
+The manual way to do stuff like that, is to set a label to where you want to
+point to. Then you can use ```\ref{}```, to reference this label.
+
+```latex
+\section{Section}\label{sec1}
+This is a section i want to point to.
+
+\section{Mention}
+In this section I am mention Section \ref{sec1}.
+```
+
+This will put the number of the section into the text, and when clicked bring
+the reader to that section. Should the order of the sections change, the number
+will update correctly.
+
+Of course you can also set custom links in your document. To achieve this effect you only need to use the package ```hyperref```.
+
+```latex
+\usepackage{hyperref}
+```
+
+This will automatically link all elements in the table of contents to their
+section. The same is true for all kinds of indexes. If you would like to make
+a custom reference to something in your document you can do the following.
+
+```latex
+\section{Section}\label{sec1}
+This section will be referenced.
+
+\section{Mention}
+When a reader clicks \hyperref{sec1}{here}, he will be brought to section 1.
+```
+
+You can also put links to external places in your document, using one of those
+methods:
+
+```latex
+\url{<my_url>}                 % show link in monospace font
+\href{<my_url>}{<description>} % show description in regiular font
+```
