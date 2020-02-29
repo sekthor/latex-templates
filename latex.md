@@ -4,6 +4,9 @@ This is my guide on how to use LaTeX. It mostly consits of my own notes I took w
 first getting into LaTeX. Topics covereed are:
 
 - [basic structure](#Basic-structure)
+- [copiling](#compiling)
+- [title](#title)
+- [headings](#headings)
 - [tables](#Tables-and-Figures)
 
 ## Basic structure
@@ -155,6 +158,40 @@ The output looks like this:
 
 ![image](img/section.png)
 
+## Lists
+
+Lists are very simple to create. All you need to do is to decide whether you want
+your list to be ordered (```enumerate```) or unordered (```itemize```).
+
+```latex
+% A numbered list
+\begin{enumerate}
+    \item{Item 1}
+    \item{Item 2}
+\end{enumerate}
+
+% An unordered list
+\begin{itemize}
+    \item{Item 1}
+    \item{Item 2}
+\end{itemize}
+```
+
+## Tables and Figures
+
+```latex
+\begin{table}            % will create the float environment
+\centering               % centers table
+\begin{tabular}{|l|c|r|} % tell LaTeX number of columns and their alignment
+\hline                   % horizontal line
+Heading 1 & Heading & Heading 3 \\ % columns separated by &, end of row with \\
+\hline
+1 & 2 & 3 \\
+\hline
+\end{tabular}
+\end{table}
+```
+
 ## Table of Contents
 
 If you want to have an index of all your sections and subsections you can use the ```\tableofcontents```
@@ -190,22 +227,5 @@ Here is some text metioning the keyword.\index{keyword}
 
 ![image](img/index1.png)
 ![image](img/index2.png)
-
-## Lists
-
-## Tables and Figures
-
-```latex
-\begin{table}            % will create the float environment
-\centering               % centers table
-\begin{tabular}{|l|c|r|} % tell LaTeX number of columns and their alignment
-\hline                   % horizontal line
-Heading 1 & Heading & Heading 3 \\ % columns separated by &, end of row with \\
-\hline
-1 & 2 & 3 \\
-\hline
-\end{tabular}
-\end{table}
-```
 
 ## References
