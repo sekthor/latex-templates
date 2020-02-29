@@ -1,7 +1,7 @@
 # latex-templates
 
 In this repository you can find some of the templates i use for my documents.
-If you are interested in learning about ```LaTeX``` I am writing a tutorial, 
+If you are interested in learning about ```LaTeX``` I am writing a tutorial,
 which you can also find [here](latex.md).
 
 ## academic-paper
@@ -14,3 +14,5 @@ It requires the following packages (most should be installed by default in your
 version of LaTeX):
 
 - [apacite](https://ctan.org/pkg/apacite) to cite references in the APA-style
+- [hyperref](https://ctan.org/pkg/hyperref) to create links with in the document
+- [graphicx](https://ctan.org/pkg/graphicx) to include figures
